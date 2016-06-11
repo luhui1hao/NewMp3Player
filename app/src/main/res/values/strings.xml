@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NewMp3Player</string>
+    <string name="menu_search">搜索</string>
 </resources>
