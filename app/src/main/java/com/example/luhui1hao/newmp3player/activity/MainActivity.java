@@ -1,4 +1,4 @@
-package com.example.luhui1hao.newmp3player;
+package com.example.luhui1hao.newmp3player.activity;
 
 import android.app.Activity;
 import android.support.design.widget.TabLayout;
@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
+import com.example.luhui1hao.newmp3player.R;
 import com.example.luhui1hao.newmp3player.adapter.SimpleFragmentPagerAdapter;
 
 public class MainActivity extends FragmentActivity {

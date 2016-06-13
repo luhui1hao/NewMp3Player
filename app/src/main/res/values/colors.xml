@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#DF3130</color>
     <color name="colorAccent">#DF3130</color>
     <color name="wangyiyun_red">#DF3130</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#787878</color>
 </resources>

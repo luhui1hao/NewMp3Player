@@ -1,19 +1,15 @@
 package com.example.luhui1hao.newmp3player.adapter;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.ImageSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.luhui1hao.newmp3player.R;
+import com.example.luhui1hao.newmp3player.fragment.MusicFragment;
 import com.example.luhui1hao.newmp3player.fragment.TestFragment;
 
 /**
@@ -21,7 +17,6 @@ import com.example.luhui1hao.newmp3player.fragment.TestFragment;
  */
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
     final int PAGE_COUNT = 3;
-    private String tabTitles[] = new String[]{"tab1","tab2","tab3"};
     private Context context;
     private int[] imageResId = {
             R.drawable.actionbar_discover,
@@ -36,6 +31,9 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
+        if(position == 1){
+            return new MusicFragment();
+        }
         return TestFragment.newInstance(position + 1);
     }
 
