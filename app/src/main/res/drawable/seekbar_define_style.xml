@@ -2,19 +2,17 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <!--未选中-->
     <item android:id="@android:id/background">
-        <clip>
             <shape>
                 <corners android:radius="2dp" />
                 <solid android:color="@color/grey"/>
             </shape>
-        </clip>
     </item>
     <!-- 选中 -->
     <item android:id="@android:id/progress">
         <clip>
             <shape>
                 <corners android:radius="2dp" />
-                <solid android:color="@color/wangyiyun_red"/>
+                <solid android:color="@color/seekbar_progress"/>
             </shape>
         </clip>
     </item>

@@ -2,52 +2,152 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/temp_shape_bg"
+    android:fitsSystemWindows="true">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_player"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@null">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="遇见"
-                android:textSize="20sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="孙燕姿"
-                android:textSize="15sp"
-                android:textColor="@color/grey"/>
+                android:textColor="@color/author"
+                android:textSize="10sp" />
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <SeekBar
             android:id="@+id/progress_volume"
+            style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:max="100"
             android:maxHeight="3dp"
             android:minHeight="3dp"
-            android:max="100"
             android:progress="50"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:thumb="@mipmap/play_volumebar_btn"
-            android:progressDrawable="@drawable/seekbar_define_style"/>
+            android:progressDrawable="@drawable/seekbar_define_style"
+            android:thumb="@mipmap/play_volumebar_btn" />
+
         <ImageView
             android:layout_width="15dp"
             android:layout_height="15dp"
-            android:src="@mipmap/recording_song_volume"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/progress_volume"
-            android:layout_marginRight="5dp"/>
+            android:src="@mipmap/recording_song_volume" />
     </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"></FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_marginTop="3dp"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <SeekBar
+                android:id="@+id/seekbar_progress_player"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:thumb="@drawable/play_thumb"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textSize="10dp"
+                android:textColor="@color/author"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/seekbar_progress_player"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textSize="10dp"
+                android:textColor="@color/grey"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/seekbar_progress_player"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:id="@+id/play_play_btn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@null"
+                android:src="@drawable/dra_play_btn_pause"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/imagebtn_padding"
+                android:scaleType="fitCenter"/>
+            <ImageButton
+                android:id="@+id/play_prev_btn"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@null"
+                android:layout_toLeftOf="@id/play_play_btn"
+                android:layout_centerVertical="true"
+                android:src="@drawable/dra_play_btn_prev"
+                android:padding="@dimen/imagebtn_padding"/>
+            <ImageButton
+                android:id="@+id/play_next_btn"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@null"
+                android:layout_toRightOf="@id/play_play_btn"
+                android:layout_centerVertical="true"
+                android:src="@drawable/dra_play_btn_next"
+                android:padding="@dimen/imagebtn_padding"/>
+            <ImageButton
+                android:id="@+id/play_mode_btn"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@null"
+                android:layout_toLeftOf="@id/play_prev_btn"
+                android:layout_centerVertical="true"
+                android:src="@drawable/dra_play_icn_loop"
+                android:padding="@dimen/imagebtn_padding"
+                />
+            <ImageButton
+                android:id="@+id/play_list_btn"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@null"
+                android:layout_toRightOf="@id/play_next_btn"
+                android:layout_centerVertical="true"
+                android:src="@drawable/dra_play_icn_src"
+                android:padding="@dimen/imagebtn_padding"
+                />
+        </RelativeLayout>
+    </LinearLayout>
 </LinearLayout>

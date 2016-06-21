@@ -4,6 +4,11 @@
     <color name="colorPrimaryDark">#DF3130</color>
     <color name="colorAccent">#DF3130</color>
     <color name="wangyiyun_red">#DF3130</color>
+    <color name="wangyiyun_red_pre">#aa2020</color>
     <color name="white">#FFFFFF</color>
     <color name="grey">#787878</color>
+    <color name="seekbar_progress">#aaa0a0</color>
+    <color name="author">#b7b2b2</color>
+    <color name="line_bg">#d3cdcd</color>
+    <color name="btn_pre_bg">#d3cfcf</color>
 </resources>

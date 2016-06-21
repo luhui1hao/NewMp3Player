@@ -2,4 +2,11 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="imagebtn_padding">0dp</dimen>
+    <dimen name="music_icn_dimen">50dp</dimen>
+    <dimen name="toolbar_custom_textview">20sp</dimen>
+    <dimen name="list_item_textsize">15sp</dimen>
+    <dimen name="scan_pathing_textSize">12sp</dimen>
+    <dimen name="btn_width_size">350dp</dimen>
+    <dimen name="btn_height_size">45dp</dimen>
 </resources>

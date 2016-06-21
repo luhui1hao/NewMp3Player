@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/local_music_more_menu_item_icn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/actionbar_menu_icn_scan" />
+
+    <TextView
+        android:id="@+id/local_music_more_menu_item_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/local_music_more_menu_item_icn"
+        android:layout_marginLeft="10dp"
+        android:textSize="@dimen/list_item_textsize"
+        android:textColor="@android:color/black"/>
+</RelativeLayout>

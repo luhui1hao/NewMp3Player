@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="music_list_icn_arr">
+        <item>@mipmap/music_icn_local</item>
+        <item>@mipmap/music_icn_recent</item>
+        <item>@mipmap/music_icn_dld</item>
+        <item>@mipmap/music_icn_artist</item>
+        <item>@mipmap/music_icn_mv</item>
+    </array>
+    <string-array name="music_list_text_arr">
+        <item>本地音乐</item>
+        <item>最近播放</item>
+        <item>下载管理</item>
+        <item>我的歌手</item>
+        <item>我的MV</item>
+    </string-array>
+</resources>

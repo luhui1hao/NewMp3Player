@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item  android:id="@+id/local_music_toolbar_search"
+        android:icon="@mipmap/actionbar_search"
+        android:title="@string/menu_search"
+        app:showAsAction="always"/>
+    <item  android:id="@+id/local_music_toolbar_more"
+        android:icon="@mipmap/actionbar_more"
+        android:title="@string/local_music_more"
+        app:showAsAction="always"/>
+</menu>

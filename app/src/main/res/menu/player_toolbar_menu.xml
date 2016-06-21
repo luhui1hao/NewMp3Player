@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_share"
-        android:icon="@mipmap/rcd_icn_share"
+        android:icon="@mipmap/actionbar_share"
         android:title="@string/menu_share"
         app:showAsAction="always"/>
 </menu>

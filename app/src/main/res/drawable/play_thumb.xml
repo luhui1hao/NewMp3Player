@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@mipmap/play_plybar_btn" />
+    </item>
+    <item>
+        <bitmap
+        android:src="@mipmap/play_plybar_btn_loading"
+        android:gravity="center"/>
+    </item>
+</layer-list>
