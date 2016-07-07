@@ -21,4 +21,9 @@
         <item name="android:windowExitAnimation">@anim/popupwindow_quit_anim</item>
     </style>
 
+    <style name="listPopupWindowAnim" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/push_up</item>
+        <item name="android:windowExitAnimation">@anim/push_down</item>
+    </style>
+
 </resources>

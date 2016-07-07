@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
@@ -37,28 +38,18 @@ public class LocalMusicActivity extends FragmentActivity {
     private LocalMusicFragmentPagerAdapter pagerAdapter;
     private ViewPager viewPager;
     private TabLayout tabLayout;
-    private List<Mp3Info> list =  new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.local_activity_layout);
+
         initToolbar();
-
-        //从数据库中取出本地音乐list
-        list = obtainList();
-
         initTabLayout();
-    }
-
-    private List<Mp3Info> obtainList() {
-        //从数据库中取出list
-        return MyDatabaseHelper.getInstance(this).getMp3Infos();
     }
 
     private void initTabLayout() {
         //在Fragment里面判断加载哪种布局
-        pagerAdapter = new LocalMusicFragmentPagerAdapter(getSupportFragmentManager(), this, list);
+        pagerAdapter = new LocalMusicFragmentPagerAdapter(getSupportFragmentManager(), this);
         viewPager = (ViewPager)findViewById(R.id.local_music_viewpager);
         viewPager.setAdapter(pagerAdapter);
         tabLayout = (TabLayout)findViewById(R.id.local_music_sliding_tabs);
@@ -91,7 +82,6 @@ public class LocalMusicActivity extends FragmentActivity {
         });
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void showMoreMenu() {
         View contentView = LayoutInflater.from(LocalMusicActivity.this).inflate(R.layout.local_music_more_menu_layout, null);
         final PopupWindow mPopWindow = new PopupWindow(contentView,

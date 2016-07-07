@@ -10,11 +10,19 @@ import android.view.View;
 
 import com.example.luhui1hao.newmp3player.R;
 import com.example.luhui1hao.newmp3player.adapter.SimpleFragmentPagerAdapter;
+import com.example.luhui1hao.newmp3player.model.Mp3Info;
+import com.example.luhui1hao.newmp3player.service.PlayerService;
+import com.example.luhui1hao.newmp3player.sqlite.MyDatabaseHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends FragmentActivity{
     private SimpleFragmentPagerAdapter pagerAdapter;
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    private List<Mp3Info> list = new ArrayList<>();
+    private int position;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +30,12 @@ public class MainActivity extends FragmentActivity{
 
         initToolBar();
         initTabLayout();
+        initMp3ListInfo();
+    }
+
+    private void initMp3ListInfo() {
+        //TODO 根据SharePreference中的数据，加入list和position数据
+
     }
 
     public void startSwitch(View view){

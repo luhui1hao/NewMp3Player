@@ -20,32 +20,34 @@ public class LocalMusicFragmentPagerAdapter extends FragmentPagerAdapter {
     final int PAGE_COUNT = 4;
     private String tabTitles[] = new String[]{"单曲","歌手","专辑","文件夹"};
     private Context context;
-    private List<Mp3Info> list = new ArrayList<>();
+    Fragment fragment = null;
 
-    public LocalMusicFragmentPagerAdapter(FragmentManager fm, Context context, List<Mp3Info> list) {
+    public LocalMusicFragmentPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
         this.context = context;
-        this.list = list;
     }
 
     @Override
     public Fragment getItem(int position) {
-        Fragment fragment = null;
         switch (position){
             case 0:
-                fragment = new SingleFragment();
-                Bundle data = new Bundle();
-                data.putSerializable("list", (Serializable) list);
-                fragment.setArguments(data);
+                startSingleFragment();
                 break;
             case 1:
+                startSingleFragment();
                 break;
             case 2:
+                startSingleFragment();
                 break;
             case 3:
+                startSingleFragment();
                 break;
         }
         return fragment;
+    }
+
+    private void startSingleFragment() {
+        fragment = new SingleFragment();
     }
 
     @Override

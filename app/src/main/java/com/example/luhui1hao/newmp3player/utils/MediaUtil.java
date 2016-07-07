@@ -83,7 +83,7 @@ public class MediaUtil {
     /*
         格式化时间，把毫秒转换成分：秒格式
     */
-    private static String formatTime(long time) {
+    public static String formatTime(long time) {
         String min = time / (1000 * 60) + "";
         String sec = time % (1000 * 60) + "";
         if (min.length() < 2) {

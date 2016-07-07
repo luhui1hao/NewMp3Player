@@ -2,18 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants">
 
     <ImageButton
         android:id="@+id/single_item_more_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="55dp"
         android:src="@mipmap/list_icn_more"
         android:background="@null"
         android:layout_alignParentRight="true"/>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_toLeftOf="@id/single_item_more_btn"
         android:layout_marginLeft="10dp">
         <TextView
@@ -21,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             android:text="出卖"/>
         <ImageView
             android:id="@+id/single_item_ok_img"

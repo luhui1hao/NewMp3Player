@@ -82,6 +82,18 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
+     * 插入一组完整的Mp3信息
+     */
+    public void insertMp3Infos(List<Mp3Info> list){
+        for(Mp3Info mp3Info : list){
+            //只取以mp3结尾的文件
+            if(mp3Info.getDisplayName().endsWith(".mp3")){
+                insertMp3Info(mp3Info);
+            }
+        }
+    }
+
+    /**
      * 清空数据表
      */
     public void clear() {
@@ -93,6 +105,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
      * 返回本地歌曲列表
      */
     public List<Mp3Info> getMp3Infos(){
+        //首先清空list
+        list.clear();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.query("Mp3Infos",null ,null ,null ,null ,null ,null);
         while(cursor.moveToNext()){

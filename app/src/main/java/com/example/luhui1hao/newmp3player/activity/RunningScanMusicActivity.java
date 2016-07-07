@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.example.luhui1hao.newmp3player.R;
 import com.example.luhui1hao.newmp3player.model.Mp3Info;
+import com.example.luhui1hao.newmp3player.sqlite.MyDatabaseHelper;
 import com.example.luhui1hao.newmp3player.utils.MediaUtil;
 
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ public class RunningScanMusicActivity extends Activity {
     private Transition mytransition;
     private ViewGroup container;
     ButtonListener buttonListener;
+    TextView countTv;
     public Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -56,6 +58,8 @@ public class RunningScanMusicActivity extends Activity {
                 TransitionManager.go(current);
                 //为新布局绑定监听器
                 initializeAnotherSceneListener();
+                countTv = (TextView)findViewById(R.id.running_scan_tv);
+                countTv.setText("共扫描到"+ mp3List.size() +"首歌曲");
             }
         }
     };
@@ -67,8 +71,11 @@ public class RunningScanMusicActivity extends Activity {
         setContentView(R.layout.running_scan_music_layout);
 
         enterScene();
-
+        //从MediaProvider获取歌曲列表
         mp3List = getMusicFromContentProvider();
+        //将获取到的歌曲信息插入到数据库
+        clearAndUpdateDataBase();
+
         initializeAnim();
         initializeCurrentSceneListener();
 
@@ -84,6 +91,14 @@ public class RunningScanMusicActivity extends Activity {
                 handler.sendMessage(msg);
             }
         }, 3000);
+    }
+
+    private void clearAndUpdateDataBase() {
+        MyDatabaseHelper dbHelper = MyDatabaseHelper.getInstance(this);
+        //清空数据库
+        dbHelper.clear();
+        //插入一组数据
+        dbHelper.insertMp3Infos(mp3List);
     }
 
     private void enterScene() {
@@ -140,7 +155,7 @@ public class RunningScanMusicActivity extends Activity {
                 onBackPressed();
             }else if(id == R.id.running_scan_back_music_btn){
                 Intent intent = new Intent(RunningScanMusicActivity.this, LocalMusicActivity.class);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         }
